@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.Net.Http.Headers;
+using Eshop;
 
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
+//practice for LINQ
 var scores = new Dictionary<string, int>
 {
     {"David",97},
@@ -22,7 +24,9 @@ foreach (var item in scoresQuery)
     Console.WriteLine($"{item} got score above 80 in exam.");
 }
 
-var products = new List<Product>();
+//working with database
+var context = new EshopContext();
+var products = context.products;
 
 app.Use(async (context, next) =>
 {
@@ -39,21 +43,21 @@ app.MapGet("/products/{id}", (int id) =>
 });
 app.MapPost("/products", (Product product) =>
 {
-    products.Add(product);
+    context.Add(product);
+    context.SaveChanges();
     return TypedResults.Created("/products/{product.id}", product);
 });
 app.MapDelete("/products/{id}", (int id) =>
 {
-    products.RemoveAll(p => p.id == id);
+    var product = context.products
+                .Where(p => p.id == id)
+                .FirstOrDefault();
+    if (product is Product)
+    {
+        context.products.Remove(product);
+        context.SaveChanges();
+    }
     return TypedResults.NoContent();
 });
 
 app.Run();
-
-public class Product(int id, string name, int price, string description)
-{
-    public int id { get; set; } = id;
-    public string name { get; set; } = name;
-    public int price { get; set; } = price;
-    public string description { get; set; } = description;
-}

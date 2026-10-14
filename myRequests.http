@@ -1,18 +1,17 @@
-GET http://localhost:5176/products
+GET http://localhost:5115/products
 
 ###
-POST http://localhost:5176/products
+POST http://localhost:5115/products
 Content-Type: application/json
 
 {
-    "id":1,
     "name":"iphone 16promax",
     "price":2000000,
     "description":"best product"
 }
 
 ###
-GET http://localhost:5176/products/1
+GET http://localhost:5115/products/2
 
 ###
-DELETE http://localhost:5176/products/1
+DELETE http://localhost:5115/products/1
