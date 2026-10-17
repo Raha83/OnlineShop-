@@ -1,9 +1,13 @@
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.Net.Http.Headers;
 using Eshop;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
+//Add services
+builder.Services.AddDbContext<EshopContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("Information")));
 
 //practice for LINQ
 var scores = new Dictionary<string, int>
