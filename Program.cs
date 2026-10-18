@@ -4,10 +4,14 @@ using Eshop;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
 //Add services
+var connectionString =
+    builder.Configuration.GetConnectionString("Information");
 builder.Services.AddDbContext<EshopContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("Information")));
+builder.Services.AddRazorPages();
+var app = builder.Build();
+app.MapRazorPages();
 
 //practice for LINQ
 var scores = new Dictionary<string, int>
@@ -29,7 +33,10 @@ foreach (var item in scoresQuery)
 }
 
 //working with database
-var context = new EshopContext();
+var options = new DbContextOptionsBuilder<EshopContext>()
+.UseSqlServer(connectionString)
+.Options;
+var context = new EshopContext(options);
 var products = context.products;
 
 app.Use(async (context, next) =>

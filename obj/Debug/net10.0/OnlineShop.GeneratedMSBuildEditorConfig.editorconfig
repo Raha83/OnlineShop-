@@ -25,8 +25,36 @@ build_property.EnableComHosting =
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 10.0
 build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = D:\raha\C#\OnlineShop\OnlineShop
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
+
+[D:/raha/C\#/OnlineShop/OnlineShop/pages/products/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = cGFnZXNccHJvZHVjdHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/raha/C\#/OnlineShop/OnlineShop/pages/products/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = cGFnZXNccHJvZHVjdHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/raha/C\#/OnlineShop/OnlineShop/pages/products/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = cGFnZXNccHJvZHVjdHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/raha/C\#/OnlineShop/OnlineShop/pages/products/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = cGFnZXNccHJvZHVjdHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/raha/C\#/OnlineShop/OnlineShop/pages/products/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = cGFnZXNccHJvZHVjdHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/raha/C\#/OnlineShop/OnlineShop/pages/shared/_layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = cGFnZXNcc2hhcmVkXF9sYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/raha/C\#/OnlineShop/OnlineShop/pages/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = cGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
