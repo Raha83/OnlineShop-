@@ -8,7 +8,7 @@ namespace Eshop
         public int Id { get; set; }
         public string? name { get; set; }
         public string email { get; set; } = null!;
-        public virtual ICollection<Order> orders { get; set; } = null!;
+        public virtual ICollection<Order>? orders { get; set; }
 
     }
 
