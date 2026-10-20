@@ -58,3 +58,7 @@ build_metadata.AdditionalFiles.CssScope =
 [D:/raha/C\#/OnlineShop/OnlineShop/pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = cGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
+
+[D:/raha/C\#/OnlineShop/OnlineShop/pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = cGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 

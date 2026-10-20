@@ -18,11 +18,11 @@ namespace OnlineShop.pages_products
             _context = context;
         }
 
-        public IList<Product> Product { get;set; } = default!;
+        public IList<Product> Product { get; set; } = default!;
 
         public async Task OnGetAsync()
         {
-            Product = await _context.products.ToListAsync();
+            Product = await _context.products.AsNoTracking().ToListAsync();
         }
     }
 }

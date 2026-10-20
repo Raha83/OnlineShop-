@@ -46,7 +46,7 @@ app.Use(async (context, next) =>
     Console.WriteLine($"[{context.Request.Method} {context.Request.Path} {DateTime.UtcNow}] finished");
 });
 
-app.MapGet("/products", () => products);
+// app.MapGet("/products", () => products);
 app.MapGet("/products/{id}", (int id) =>
 {
     var product = products.FirstOrDefault(p => p.id == id);
