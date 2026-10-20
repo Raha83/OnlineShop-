@@ -27,7 +27,8 @@ namespace OnlineShop.pages_products
                 return NotFound();
             }
 
-            var product = await _context.products.FirstOrDefaultAsync(m => m.id == id);
+            var minPrice = 500000;
+            var product = await _context.products.FromSqlInterpolated($"SELECT * FROM products WHERE price > {minPrice}").FirstOrDefaultAsync(m => m.id == id);
 
             if (product is not null)
             {

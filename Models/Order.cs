@@ -4,7 +4,7 @@ namespace Eshop
     {
         public int id { get; set; }
         public int customerId { get; set; }
-        public Customer customer { get; set; } = null!;
-        public ICollection<OrderDetail>? orderdetails { get; set; }
+        public virtual Customer customer { get; set; } = null!;
+        public virtual ICollection<OrderDetail>? orderdetails { get; set; }
     }
 }

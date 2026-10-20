@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString =
     builder.Configuration.GetConnectionString("Information");
 builder.Services.AddDbContext<EshopContext>(options =>
-options.UseSqlServer(builder.Configuration.GetConnectionString("Information")));
+options.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("Information")));
 builder.Services.AddRazorPages();
 var app = builder.Build();
 app.MapRazorPages();
