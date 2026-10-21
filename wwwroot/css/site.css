@@ -1,129 +1,386 @@
-/* General */
-* {
+
+*,
+*::before,
+*::after {
     box-sizing: border-box;
+}
+
+:root {
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --background: #f1f5f9;
+    --surface: #ffffff;
+    --border: #e2e8f0;
+    --success: #15803d;
+    --danger: #dc2626;
+    --danger-hover: #b91c1c;
+    --radius: 10px;
+    --shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f5f7fb;
-    color: #333;
-    line-height: 1.6;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text);
+    background-color: var(--background);
 }
 
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-    color: #243b53;
-    font-weight: 600;
+/* =========================
+   1. Page Layout
+========================= */
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 24px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+h1 {
+    font-size: clamp(1.7rem, 3vw, 2.2rem);
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+p {
+    margin-top: 0;
     margin-bottom: 16px;
+    color: var(--text-muted);
 }
 
-/* Links */
+/* =========================
+   2. Links
+========================= */
+
 a {
-    color: #0d6efd;
+    color: var(--primary);
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
 a:hover {
-    color: #084298;
+    color: var(--primary-hover);
+    text-decoration: underline;
 }
 
-/* Main content */
-main, .container {
-    padding-top: 24px;
-    padding-bottom: 24px;
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.25);
+    outline-offset: 2px;
 }
 
-/* Forms */
+/* =========================
+   3. Forms
+========================= */
+
 form {
+    margin-bottom: 24px;
+}
+
+.form-group {
     margin-bottom: 20px;
 }
 
-label {
-    display: inline-block;
-    margin-bottom: 6px;
-    font-weight: 500;
+label,
+.control-label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 600;
+    color: #334155;
 }
 
-input, textarea, select {
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+textarea,
+select {
+    display: block;
+    width: 100%;
     max-width: 100%;
+    min-height: 44px;
     padding: 10px 12px;
-    border: 1px solid #ced4da;
-    border-radius: 6px;
-    background-color: #fff;
     font: inherit;
+    color: var(--text);
+    background-color: var(--surface);
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-input:focus, textarea:focus, select:focus {
-    border-color: #86b7fe;
-    outline: 0;
-    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+textarea {
+    min-height: 120px;
+    resize: vertical;
 }
 
-/* Buttons */
-button, .btn {
-    border-radius: 6px;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
 }
 
-button:hover, .btn:hover {
+input::placeholder,
+textarea::placeholder {
+    color: #94a3b8;
+}
+
+/* =========================
+   4. Buttons
+========================= */
+
+button,
+.btn,
+input[type="submit"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 40px;
+    padding: 9px 16px;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    font: inherit;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease,
+                border-color 0.2s ease,
+                color 0.2s ease,
+                transform 0.2s ease;
+}
+
+/* Primary buttons: Create, Save, Add */
+
+.btn-primary,
+input[type="submit"].btn-primary {
+    color: #fff;
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-primary:hover,
+input[type="submit"].btn-primary:hover {
+    color: #fff;
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    text-decoration: none;
+}
+
+/* Secondary buttons: Back to List, Cancel */
+
+.btn-secondary,
+a.btn-secondary,
+button.btn-secondary {
+    color: #334155;
+    background-color: #e2e8f0;
+    border-color: #e2e8f0;
+}
+
+.btn-secondary:hover,
+a.btn-secondary:hover,
+button.btn-secondary:hover {
+    color: #1e293b;
+    background-color: #cbd5e1;
+    border-color: #cbd5e1;
+    text-decoration: none;
+}
+
+/* Danger buttons: Delete */
+
+.btn-danger,
+input[type="submit"].btn-danger {
+    color: #fff;
+    background-color: var(--danger);
+    border-color: var(--danger);
+}
+
+.btn-danger:hover,
+input[type="submit"].btn-danger:hover {
+    color: #fff;
+    background-color: var(--danger-hover);
+    border-color: var(--danger-hover);
+    text-decoration: none;
+}
+
+button:hover,
+.btn:hover,
+input[type="submit"]:hover {
     transform: translateY(-1px);
+    text-decoration: none;
 }
 
-/* Tables */
+button:disabled,
+.btn:disabled,
+input[type="submit"]:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* =========================
+   5. Tables
+========================= */
+
 table {
     width: 100%;
+    margin: 0;
     border-collapse: collapse;
-    background-color: #fff;
-    margin: 20px 0;
+    background-color: var(--surface);
 }
 
-th, td {
-    padding: 12px 15px;
-    border: 1px solid #dee2e6;
+th,
+td {
+    padding: 14px 16px;
     text-align: left;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--border);
 }
 
 th {
-    background-color: #e9eef5;
-    color: #243b53;
+    color: #334155;
+    font-size: 0.9rem;
+    font-weight: 700;
+    background-color: #f8fafc;
+    white-space: nowrap;
 }
 
-/* Cards and details */
-.card, .product-details {
-    background-color: #fff;
-    border: 1px solid #e9edf2;
-    border-radius: 10px;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
-    padding: 20px;
-    margin-bottom: 20px;
+tbody tr:last-child td {
+    border-bottom: none;
 }
 
-/* Images */
-img {
-    max-width: 100%;
-    height: auto;
+tbody tr:hover {
+    background-color: #f8fafc;
 }
 
-/* Validation messages */
-.text-danger, .field-validation-error {
-    color: #dc3545;
+td a:not(.btn) {
+    margin-right: 8px;
 }
 
-.validation-summary-errors {
-    color: #dc3545;
-    margin-bottom: 15px;
+/* =========================
+   6. Validation Messages
+========================= */
+
+.text-danger,
+.field-validation-error {
+    display: block;
+    margin-top: 5px;
+    color: var(--danger);
+    font-size: 0.875rem;
 }
 
-/* Responsive */
+/* =========================
+   7. Home Page
+========================= */
+
+.home-page {
+    padding: 40px 0;
+}
+
+.home-page h1 {
+    color: #26354d;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.home-subtitle {
+    color: var(--text-muted);
+    margin-bottom: 32px;
+}
+
+.home-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.home-card {
+    padding: 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.home-card h2 {
+    color: #26354d;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+.home-card p {
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+
+/* =========================
+   8. Responsive Design
+========================= */
+
 @media (max-width: 768px) {
-    main, .container {
-        padding-top: 16px;
-        padding-bottom: 16px;
+    main {
+        padding: 20px 16px;
     }
 
-    th, td {
-        padding: 8px;
+    .card,
+    .product-details {
+        padding: 18px;
+    }
+
+    th,
+    td {
+        padding: 10px 12px;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    .btn {
+        margin-bottom: 4px;
+    }
+
+    .home-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
     }
 }

@@ -29,13 +29,6 @@ namespace OnlineShop.pages_customers
         // For more information, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            foreach (var item in ModelState)
-            {
-                foreach (var error in item.Value.Errors)
-                {
-                    Console.WriteLine($"{item.Key}: {error.ErrorMessage}");
-                }
-            }
             if (!ModelState.IsValid)
             {
                 return Page();

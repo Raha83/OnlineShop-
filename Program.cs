@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.SignalR;
 using Microsoft.Net.Http.Headers;
 using Eshop;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 //Add services
@@ -11,6 +13,7 @@ builder.Services.AddDbContext<EshopContext>(options =>
 options.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("Information")));
 builder.Services.AddRazorPages();
 var app = builder.Build();
+app.UseStaticFiles();
 app.MapRazorPages();
 
 //practice for LINQ

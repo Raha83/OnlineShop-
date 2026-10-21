@@ -588,6 +588,6 @@ D:\raha\C#\OnlineShop\OnlineShop\bin\Debug\net10.0\refs\WindowsBase.dll
 D:\raha\C#\OnlineShop\OnlineShop\bin\Debug\net10.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
 D:\raha\C#\OnlineShop\OnlineShop\bin\Debug\net10.0\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
 D:\raha\C#\OnlineShop\OnlineShop\obj\Debug\net10.0\OnlineShop.MvcApplicationPartsAssemblyInfo.cs
-D:\raha\C#\OnlineShop\OnlineShop\obj\Debug\net10.0\compressed\2qlmberji0-{0}-92wywdxuji-92wywdxuji.gz
 D:\raha\C#\OnlineShop\OnlineShop\bin\Debug\net10.0\Castle.Core.dll
 D:\raha\C#\OnlineShop\OnlineShop\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Proxies.dll
+D:\raha\C#\OnlineShop\OnlineShop\obj\Debug\net10.0\compressed\2qlmberji0-{0}-a2klcu1hjo-a2klcu1hjo.gz

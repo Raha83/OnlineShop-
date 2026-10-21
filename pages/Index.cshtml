@@ -1,0 +1,31 @@
+@page
+
+@{
+    ViewData["Title"] = "Home";
+    Layout = "_Layout";
+}
+
+<div class="home-page">
+    <h1>Welcome to Online Shop</h1>
+    <p class="home-subtitle">
+        Choose a section to manage your data.
+    </p>
+
+    <div class="home-cards">
+        <div class="home-card">
+            <h2>Customers</h2>
+            <p>View and manage customer information.</p>
+            <a asp-page="/Customers/Index" class="btn btn-primary">
+                Manage Customers
+            </a>
+        </div>
+
+        <div class="home-card">
+            <h2>Products</h2>
+            <p>View and manage shop products.</p>
+            <a asp-page="/Products/Index" class="btn btn-primary">
+                Manage Products
+            </a>
+        </div>
+    </div>
+</div>

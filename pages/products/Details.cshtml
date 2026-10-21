@@ -2,6 +2,7 @@
 @model OnlineShop.pages_products.DetailsModel
 
 @{
+    ViewData["Title"] = "Product Details";
     Layout = "_layout";
 }
 
@@ -30,6 +31,6 @@
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.Product.id">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Edit" asp-route-id="@Model.Product.id" class="btn btn-primary">Edit</a> |
+    <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
 </div>
